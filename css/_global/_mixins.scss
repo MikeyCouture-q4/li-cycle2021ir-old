@@ -1,0 +1,260 @@
+/// A function used to convert pixel font sizes to rem size. This is a supporting function for the font-size mixin.
+/// @param {px} $size font-size in pixels
+@function calculateRem($size) {
+    $remSize: $size / $body-size;
+    @return $remSize * 1rem;
+}
+
+/// A function used to convert rem sizes to pixel size. This is a supporting function for the property-with-rem mixin.
+/// @param {px} $size font-size in pixels
+@function calculatePixels($size) {
+    $pixelSize: $size / 1rem * $body-size;
+    @return $pixelSize;
+}
+
+/// Use to assign font-size using rem with px size fall-back.
+/// @param {px} $size font-size in pixels
+/// @example
+/// p {
+///   @include font-size(14px)
+/// }
+/// @output <pre>
+/// p {
+///   font-size: 14px; //Will be overridden if browser supports rem
+///   font-size: 0.8rem;
+/// }
+/// </pre>
+@mixin font-size($size) {
+    font-size: $size;
+    font-size: calculateRem($size);
+}
+
+/// Used as an internal function to convert strings to unicode. Used to fix a bug in Sass 3.4.0.
+@function unicode($str) {
+    @return unquote("\"")+unquote(str-insert($str, "\\", 1))+unquote("\"");
+}
+
+/// Use this to include all the necessary icon style attributes by only passing through the icon code.
+/// Note that the "\" should not be included in the unicode string.
+/// @param {string} $code the content code of the icon
+/// @example
+/// a.pdf:before {
+///   @include icon("e900");
+/// }
+/// @output <pre>
+/// a.pdf:before {
+///   font-family: 'q4-icons';
+///   speak: none;
+///   font-style: normal;
+///   font-weight: normal;
+///   font-variant: normal;
+///   text-transform: none;
+///   line-height: 1;
+///   // Better Font Rendering
+///   -webkit-font-smoothing: antialiased;
+///   -moz-osx-font-smoothing: grayscale;
+///   content: "\e900";
+/// }
+/// </pre>
+@mixin icon($code) {
+    font-family: $icon-font;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    // Better Font Rendering
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: unicode($code);
+}
+
+/// Used to assign styling for certain breakpoints quickly.
+/// Has 3 other types: layout-legacy / layout-medium / layout-small
+/// @example
+/// .sidebar {
+///   width: 60%;
+///   float: left;
+///   margin: 0 2% 0 0;
+///   @include layout-small {
+///     width: 100%;
+///     float: none;
+///     margin: 0;
+///   }
+/// }
+@mixin layout-large {
+    @media only screen and (max-width: $layout-large) {
+        @content;
+    }
+}
+@mixin layout-legacy {
+    @media only screen and (max-width: $layout-legacy) {
+        @content;
+    }
+}
+@mixin layout-medium {
+    @media only screen and (max-width: $layout-medium) {
+        @content;
+    }
+}
+@mixin layout-small {
+    @media only screen and (max-width: $layout-small) {
+        @content;
+    }
+}
+@mixin layout-mobile-legacy {
+    @media only screen and (min-width: $layout-mobile-legacy) {
+        @content;
+    }
+}
+
+/// used to set a max-width as well as center an element
+/// @param {px} $width the value to be assigned to the max-width attribute
+/// @example
+/// .pane_inner {
+///   @include fit-and-center($layout-width);
+/// }
+/// @output <pre>
+/// .pane_inner {
+///   max-width: 940px;
+///   margin-left: auto;
+///   margin-right: auto;
+/// }
+/// </pre>
+@mixin fit-and-center($width) {
+    max-width: $width;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $toast-gutter-width;
+    padding-right: $toast-gutter-width;
+}
+@mixin fit-and-center-no-padding($width) {
+    max-width: $width;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/// used to quickly apply screen-reader-only styling
+/// @example
+/// .module_label {
+///   @include sr-only();
+/// }
+/// @output <pre>
+/// .module_label {
+///   position: absolute;
+///   width: 1px;
+///   height: 1px;
+///   padding: 0;
+///   margin: -1px;
+///   overflow: hidden;
+///   clip: rect(0,0,0,0);
+///   border: 0;
+/// }
+/// </pre>
+@mixin sr-only() {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
+/// Mixin to be used when using keyframes
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+
+/// Mixin to be used for animations
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+
+/// Transition mixin
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+
+/// Transform mixins
+@mixin transform($transforms) {
+	   -moz-transform: $transforms;
+	     -o-transform: $transforms;
+	    -ms-transform: $transforms;
+	-webkit-transform: $transforms;
+          transform: $transforms;
+}
+// rotate
+@mixin rotate ($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+
+// scale
+@mixin scale($scale) {
+	 @include transform(scale($scale));
+}
+// translate
+@mixin translate ($x, $y) {
+   @include transform(translate($x, $y));
+}
+// skew
+@mixin skew ($x, $y) {
+   @include transform(skew(#{$x}deg, #{$y}deg));
+}
+//transform origin
+@mixin transform-origin ($origin) {
+    moz-transform-origin: $origin;
+	     -o-transform-origin: $origin;
+	    -ms-transform-origin: $origin;
+	-webkit-transform-origin: $origin;
+          transform-origin: $origin;
+}
+
+/// gradient border 
+@mixin bottom-to-top($color) {
+    border-width: 0 1px;
+    border-style: solid;
+    -webkit-border-image: -webkit-gradient(linear, 0 100%, 0 0, from($color), to(rgba(0, 0, 0, 0))) 1 100%;
+    -webkit-border-image: -webkit-linear-gradient(bottom, $color, rgba(0, 0, 0, 0)) 1 100%;
+    -moz-border-image: -moz-linear-gradient(bottom, $color, rgba(0, 0, 0, 0)) 1 100%;
+    -o-border-image: -o-linear-gradient(bottom, $color, rgba(0, 0, 0, 0)) 1 100%;
+    border-image: linear-gradient(to top, $color, rgba(0, 0, 0, 0)) 1 100%;
+}
+/// bottom border for links
+@mixin  border-bottom-link($border-color) {
+    background-image: linear-gradient(to right, $border-color 33%, rgba(255,255,255,0) 0%);
+    background-position: bottom;
+    background-size: 7px 2px;
+    background-repeat: repeat-x;
+}
+
+// color for svg base uri
+@function svg-color($color) {
+    @return str-insert(str-slice(unquote($color), 2), '%23', 0);
+}

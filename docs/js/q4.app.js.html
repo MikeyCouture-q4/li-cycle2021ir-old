@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>q4.app.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="q4.app.html">app</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="q4.app.html#._mailingListValidation">_mailingListValidation</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="q4.app.html#.accessibilize">accessibilize</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="q4.app.html#.accessibleNav">accessibleNav</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="q4.app.html#.addToCalendar">addToCalendar</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="q4.app.html#.androidTap">androidTap</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="q4.app.html#.cleanQuickLinks">cleanQuickLinks</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="q4.app.html#.copyright">copyright</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="q4.app.html#.docTracking">docTracking</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="q4.app.html#.fancySignup">fancySignup</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="q4.app.html#.hidePastCal">hidePastCal</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="q4.app.html#.isValidEmailAddress">isValidEmailAddress</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="q4.app.html#.makeSelect">makeSelect</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="q4.app.html#.mobileMenuToggle">mobileMenuToggle</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="q4.app.html#.remindMeOnce">remindMeOnce</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="q4.app.html#.reveal">reveal</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="q4.app.html#.scrollTo">scrollTo</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="q4.app.html#.sections">sections</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="q4.app.html#.submitOnEnter">submitOnEnter</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="q4.app.html#.superfish">superfish</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="q4.app.html#.tabs">tabs</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="q4.app.html#.toggle">toggle</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="q4.app.html#.trim">trim</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="q4.app.html#.validateSubmit">validateSubmit</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="q4.app.html#.validateUnsubscribe">validateUnsubscribe</a></span></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">q4.app.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Reuseable functions used on Q4 Websites
+ * @class q4.app
+*/
+
+/** @lends q4.app */
+var q4Defaults = {
+    options: {
+        /**
+         * Scroll speed for `scrollTo`
+         */
+        scrollSpeed: 1000,
+        /**
+         * Offset used with the `scrollTo` method to account for fixed headers
+         */
+        headerOffset: 0,
+        /**
+         * Any mailing list with this class will have their validation overwritten
+         */
+        mailingListSignupCls: '.module-subscribe--fancy',
+        /**
+         * Error message to display (i.e. mailing list signup / unsubscribe)
+         */
+        errorMessage: 'The following errors must be corrected',
+        /**
+         * Text to display if an item is required for validation
+         */
+        requiredText: 'is required',
+        /**
+         * Text to display if an entry is invalid and failed validation
+         */
+        invalidText: 'is invalid',
+        /**
+         * Text to display if captcha is required. `requiredText` and `invalidText` will often proceed this text (i.e Code is required)
+         */
+        captchaValidationText: 'Code',
+        /**
+         * Text used if a code is required.
+         */
+        provideCodeText:'Please provide the code',
+        /**
+         * Custom template for email validation
+         */
+        errorTpl: (
+            '&lt;p class="module_message module_message--error">{{errorMessage}}&lt;/p>' +
+            '&lt;ul>' +
+                '{{#errors}}' +
+                    '&lt;li>{{name}} {{message}}&lt;/li>' +
+                '{{/errors}}' +
+            '&lt;/ul>'
+        ),
+        mailingListConfig: {
+            /**
+             * Template to overwrite mailing list signup confirmation html.
+             */
+            tpl: (
+                '&lt;div id="SubscriberConfirmation" class="module module-subscribe module-subscribe--fancy dark grid_col grid_col--3-of-6 grid_col--md-1-of-2">' +
+                    '&lt;div class="module_container--outer">' +
+                        '&lt;h2 class="module_title">Email Alerts&lt;/h2>' +
+                        '&lt;div class="module_container--inner">' +
+                            '&lt;p class="module_message module_message--success">&lt;/p>' +
+                        '&lt;/div>' +
+                    '&lt;/div>' +
+                '&lt;/div>'
+            ),
+            hideOnConfirmation: '.module-subscribe-privacy',
+            location: '.pane--footer',
+            submitText: 'Submit' //this will change the text of the submit button on the on the mailing List
+        },
+        /**
+         * Contrast function options
+         */
+        contrast: {
+            toggle: '.module-contrast_button',
+            toggleClass: 'js--active',
+            bodyClass: 'js--contrast'
+        },
+        /**
+         * Enable superfish plugin
+         */
+        superfish: true
+    },
+
+    /**
+     * A test used to detect whether not the device satisfies a certain OS
+     * @example if (app.isMobile.any()) { // If on a mobile device, execute code }
+     */
+    isMobile: {
+        Android: function() {
+            return navigator.userAgent.match(/Android/i);
+        },
+        BlackBerry: function() {
+            return navigator.userAgent.match(/BlackBerry/i);
+        },
+        iOS: function() {
+            return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+        },
+        Opera: function() {
+            return navigator.userAgent.match(/Opera Mini/i);
+        },
+        Windows: function() {
+            return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
+        },
+        any: function() {
+            return (this.Android() || this.BlackBerry() || this.iOS() || this.Opera() || this.Windows());
+        }
+    },
+
+    // Default init function
+    init: function() { },
+
+    /**
+     * Function than can be used to trim text or create expandable text upon click on another element.
+     * @param {$selector} [selector]  the element which needs to be trimmed.
+     * @param {maxChar} [number] number of characters to be trimmed
+     * @param {moreText} [string] text for element that can be clicked to reveal the rest of the trimmed text. Defaults to 'show more'
+     * @param {lessText} [string] text for element that can be clicked to hide the rest of the trimmed text. Defaults to 'show less'
+     * @param {ellipsesText} [string] text used for ellipsis. Defaults to '...'
+     * @example app.trim($('.selector'), 200);
+     */
+    trim: function($selector, maxChar, moreText, lessText, ellipsesText) {
+        maxChar = maxChar ? maxChar : 0;
+        moreText = moreText ? '&lt;span class="trimmed_more" tabindex="0">' + moreText + '&lt;/span>' : '&lt;span class="trimmed_more" tabindex="0">show more&lt;/span>';
+        lessText = lessText ? '&lt;span class="trimmed_less js--hidden" tabindex="0">' + lessText + '&lt;/span>' : '&lt;span class="trimmed_less js--hidden" tabindex="0">show less&lt;/span>';
+        ellipsesText = ellipsesText ? '&lt;span class="trimmed_ellipse">' + ellipsesText + '&lt;/span>' : '&lt;span class="trimmed_ellipse">...&lt;/span>';
+
+        $selector.each(function() {
+            var $this = $(this),
+                trimmedLength = $this.text().length,
+                trimmedText = $this.text().substr(0, maxChar),
+                trimmedEnd = $this.text().substr(maxChar - trimmedLength, trimmedLength);
+
+            if (maxChar &amp;&amp; trimmedLength > maxChar) {
+                $this.html('&lt;span class="trimmed">&lt;span class="trimmed_short">' + trimmedText + '&lt;/span>&lt;span class="trimmed_end js--hidden">' + trimmedEnd + '&lt;/span>' + ellipsesText + moreText + lessText + '&lt;/span>');
+            }
+        });
+
+        $selector.on('click keypress', '.trimmed_more, .trimmed_less', function(e) {
+            if (e.keyCode == 13 || e.type == 'click') {
+                $(this).toggleClass('js--trimmed');
+                $(this).toggleClass('js--hidden').siblings('.trimmed_more, .trimmed_ellipse, .trimmed_less, .trimmed_end').toggleClass('js--hidden');
+            }
+        });
+    },
+
+    // Removes DOM elements on load
+    cleanUp: function() {
+        $('#lnkPostback').remove();
+        $('#litPageDiv > a:first').remove();
+    },
+
+    // Easier preview navigation
+    resetDate: function(selectors) {
+        if (GetViewType() === "0") {
+            $(selectors.join()).each(function() {
+                $(this).attr('href', $(this).attr('href') + '&amp;ResetDate=1');
+            });
+        }
+    },
+
+    // A better Preview Toolbar
+    previewToolbar: function() {
+        if (GetViewType() === "0") {
+            $('.PreviewToolBar').prepend(
+                '&lt;div class="PreviewTrigger">' +
+                    '&lt;i class="q4-icon_clock-line">&lt;/i>' +
+                '&lt;/div>'
+            ).on('click', '.PreviewTrigger', function() {
+                $(this).toggleClass('js--active').parent().toggleClass('js--open');
+            });
+        }
+    },
+
+    /**
+     * Function for contrast class toggle on body element. Also stores cookie
+     * @example app.contrast.init();
+     */
+    contrast: {
+        getCookie: function() {
+            return document.cookie.replace(/(?:(?:^|.*;\s*)contrast\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+        },
+        setCookie: function(boolean) {
+            document.cookie = 'contrast=' + boolean + '; path=/';
+        },
+        init: function() {
+            var inst = this;
+            if (!inst.getCookie().length) {
+                inst.setCookie('false');
+            } else if (inst.getCookie() == 'true') {
+                $(q4Defaults.options.contrast.toggle).addClass(q4Defaults.options.contrast.toggleClass);
+                $('body').addClass(q4Defaults.options.contrast.bodyClass);
+            }
+
+            $(q4Defaults.options.contrast.toggle).on('click keypress', function(e) {
+                if ($(this).is('a, button')) e.preventDefault();
+                if (e.keyCode == 13 || e.type == 'click') {
+                    if (inst.getCookie() == 'false') {
+                        inst.setCookie('true');
+                    } else {
+                        inst.setCookie('false');
+                    }
+                    $(this).toggleClass(q4Defaults.options.contrast.toggleClass);
+                    $('body').toggleClass(q4Defaults.options.contrast.bodyClass);
+                }
+            });
+        }
+    },
+
+    /**
+     * Used to scroll to a module within page.
+     * @example app.sections();
+     */
+    sections: function() {
+        var hash = window.location.hash.length ? window.location.hash.substring(1) : '';
+        if ( $('.module-'+hash).length ) {
+            setTimeout(function(){
+                q4App.scrollTo($('.module-'+hash));
+            }, 1000);
+        }
+    },
+
+    /**
+     * Used to create tabs navigation.
+     * @param {$container} [selector]  the wrapping element of tabs navigation links/select
+     * @param {trigger} [selector]  the element that will be clicked to show tabs
+     * @param {content} [selector]  the tab element that will show/hide when cliking on trigger element
+     * @param {select} [string]  the class of select that will be used as tab navigation. Can be null if not needed.
+     * @param {useHash} [boolean]  whether or not the tabs should be updated from URL hash. Defaults to true
+     * @example app.tabs($('.tabs'), '.tabs_link', '.tab', '.tabs_select', true);
+     */
+    tabs: function($container, trigger, content, select, useHash) {
+        // display specific tab using hash from url
+        var hash = window.location.hash.split('#')[1],
+            hashTargetExists = $(content + '.' + hash).length > 0,
+            changeHash = useHash != undefined ? useHash : true,
+            first,
+            $hiddenContent = function() {
+                return $(content).addClass('js--hidden').attr('aria-hidden', 'true');
+            };
+
+        if (hash &amp;&amp; hashTargetExists) {
+            $hiddenContent().filter('.' + hash).removeClass('js--hidden').attr('aria-hidden', 'false');
+            if (trigger) $(trigger).attr('tabindex', '0').filter('[data-tab=".' + hash + '"]').addClass('js--selected');
+            if (select) $(select + ' option[value=".' + hash + '"]').attr('selected', true);
+        } else {
+            $hiddenContent();
+        }
+
+        // if trigger is used/defined
+        if (trigger) {
+            first = $(trigger).first().data('tab');
+
+            if (!hash || !hashTargetExists) {
+                $(trigger).attr('tabindex', '0').first().addClass('js--selected');
+                $(first).removeClass('js--hidden').attr('aria-hidden', 'false');
+                // change hash on load
+                if (changeHash) window.location.hash = first.split('.')[1];
+            }
+
+            $container.on('click keypress', trigger, function(e) {
+                if (changeHash) window.location.hash = $(this).data('tab').split('.')[1];
+                if ($(trigger).is('a, button')) e.preventDefault();
+                $(this).addClass('js--selected').closest($container).find('.js--selected').not(this).removeClass('js--selected');
+                $hiddenContent().filter($(this).data('tab')).removeClass('js--hidden').attr('aria-hidden', 'false');
+                // update select
+                if (select) {
+                    $(select).val($(this).data('tab'));
+                }
+            });
+        }
+
+        // if select is used/defined
+        if (select) {
+            first = $(select + ' option:first-child').val();
+
+            if (!hash || !hashTargetExists) {
+                $(select + ' option:first-child').attr('selected', true);
+                $(first).removeClass('js--hidden').attr('aria-hidden', 'false');
+                // change hash on load
+                if (changeHash) window.location.hash = first.split('.')[1];
+            }
+
+            $container.on('change', select, function() {
+                var tab = $(this).val();
+                if (changeHash) window.location.hash = $(this).val().split('.')[1];
+                $hiddenContent().filter(tab).removeClass('js--hidden').attr('aria-hidden', 'false');
+                if (trigger) $(trigger).removeClass('js--selected').filter('[data-tab="' + tab + '"]').addClass('js--selected');
+            });
+        }
+    },
+
+    /**
+     * Used to reveal an element by clicking on a trigger element.
+     * Use this function to create anything from "Read More" buttons to revealing hidden elements with a trigger.
+     * @param {container} [selector]  the wrapping element
+     * @param {trigger} [selector]  the element that will be clicked to reveal 
+     * @param {panel} [selector]  the element to be revealed 
+     * @param {containerClass} [string]  the class added to container. Defaults to empty string
+     * @param {triggerClass} [string]  the class added to trigger. Defaults to js--active
+     * @param {paneClass} [string]  the class added to panel. Defaults to js--revealed
+     * @param {once} [boolean]  (optional) whether or not the event will be triggered only once
+     * @example app.reveal('.read-more', '.read-more_button', '.read-more_panel', true);
+     */
+    reveal: function(container, trigger, panel, once, containerClass, triggerClass, panelClass) {
+        containerClass = containerClass ? containerClass : '';
+        triggerClass = triggerClass ? triggerClass : 'js--active';
+        panelClass = panelClass ? panelClass : 'js--revealed';
+        $(trigger).attr('tabindex', '0');
+        $(panel).attr('aria-hidden', 'true');
+        if (once) {
+            $(container).one('click keypress', trigger, function(e) {
+                if (e.keyCode == 13 || e.type == 'click') {
+                    if ($(trigger).is('a, button')) e.preventDefault();
+                    $(container).toggleClass(containerClass);
+                    $(this).toggleClass(triggerClass).closest(container).find(panel).toggleClass(panelClass);
+                    $(panel).attr('aria-hidden', function(i, attr) {
+                        return attr == 'true' ? 'false' : 'true';
+                    });
+                }
+            });
+        } else {
+            $(container).on('click keypress', trigger, function(e) {
+                if (e.keyCode == 13 || e.type == 'click') {
+                    if ($(trigger).is('a, button')) e.preventDefault();
+                    $(container).toggleClass(containerClass);
+                    $(this).toggleClass(triggerClass).closest(container).find(panel).toggleClass(panelClass);
+                    $(panel).attr('aria-hidden', function(i, attr) {
+                        return attr == 'true' ? 'false' : 'true';
+                    });
+                }
+            });
+        }
+    },
+
+    /**
+     * Used to remove the duplicate classes on a Quick Link Module's &lt;ul> element
+     * @param {$el} [element]  the quick links module to clean up
+     * @example app.cleanQuickLinks($('.module-links'));
+     */
+    cleanQuickLinks: function($el) {
+        $el.find('ul').attr('class', 'module-links_list');
+    },
+
+    /**
+     * Scroll to an element on the page
+     * @param {$el}  [element] A selector containing the element to scroll to
+     * @example app.scrollTo( $('div[id*="SubscriberConfirmation"]') )
+     */
+    scrollTo: function($el, duration) {
+        var d = duration !== undefined &amp;&amp; !isNaN(duration) ? duration : this.options.scrollSpeed;
+        if ( $el.length ) {
+            if (history) { 
+                history.scrollRestoration = 'manual';
+            }
+
+            $('html, body').animate({
+                scrollTop: $el.eq(0).offset().top - this.options.headerOffset
+            }, d);
+        }
+    },
+
+     /**
+     * Validate if a string is a vaild email address
+     * @param {emailAddress} [string]  An email address that will be tested against the regular expression
+     * @example app.isValidEmailAddress ( 'support@q4inc.com' );
+     * @return boolean
+     */
+    isValidEmailAddress: function(emailAddress) {
+        var pattern = /^(([^&lt;>()[\]\\.,;:\s@\"]+(\.[^&lt;>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,3}))$/;
+        return pattern.test(emailAddress);
+    },
+
+    /**
+     * Attaches a click handler to the modules submit button which will not allow 
+     * the form to submit without a true email address
+     * @param {$el} [element]  an element containing the submit button
+     * @example app.validateUnsubscribe($('.MailingListUnsubscribeContainer'));
+     */
+    validateUnsubscribe: function($el) {
+        var inst = this;
+
+        $el.find('input[type="submit"]').on('click', function(e){
+            var emailAddress = $el.find('input[id*="Email"]').val();
+
+            if ( !inst.isValidEmailAddress ( emailAddress ) ) {
+                $el.find('.module_confirmation-container').html( Mustache.render( inst.options.errorTpl, {
+                    errors: [{
+                        message: emailAddress.length ? inst.options.invalidText : inst.options.requiredText,
+                        name: $el.find('label.module-unsubscribe_email').text()
+                    }],
+                    errorMessage: inst.options.errorMessage
+                })).show();
+
+                inst.scrollTo( $el.find('.module_error-container'), 0 );
+
+                $el.addClass('js--invalid');
+                e.preventDefault();
+            }
+        });
+
+        if ($el.find('.module_confirmation-container').text().trim().length) {
+            $('.module-subscribe,'+inst.options.mailingListConfig.hideOnConfirmation).not(inst.options.mailingListConfig.location+' .module-subscribe').addClass('js--hidden');
+            $el.find('.module_introduction, .module-unsubscribe_table, .module_actions').addClass('js--hidden');
+            inst.scrollTo($el);
+        }
+    },
+    
+    /**
+     * Attaches a check to a search module's submit button which will not allow
+     * the module to submit without text inside the search input
+     * @param {selector} [selector]  the class being used by the search module
+     * @example app.validateSubmit('.module-search');
+     */
+    validateSubmit: function(selector) {
+        var $search = $(selector);
+
+        $search.on('click', 'input:submit', function(e){
+            if ( !$(this).closest(selector).find('input:text').val().length ){
+                e.preventDefault();
+                return false;
+            }
+        });
+    },
+
+    /**
+     * Allows the user to submit our forms using the enter key
+     * @param {selector} [selector]  the class being used by the formbuilder module
+     * @example app.submitOnEnter('.module-form')
+     */
+    submitOnEnter: function(selector) {
+        $(selector).find('input[type="text"]').removeAttr('onkeypress').on('keydown', function(e){
+            if (e.keyCode == 13) {
+                e.preventDefault();
+                $(this).closest(selector).find('input[type="submit"]').trigger('click');
+                return false;
+            }
+        });
+    },
+
+    /**
+     * Creates a select from a list of links.
+     * @param {$selector} [element]  the element that contains the links
+     * @param {labelText} [string]  (optional) text that will appear inside the label of the select. Defaults to "Select year:"
+     * @param {selectId} [string] (optional) the id for the select. Defaults to "YearNav"
+     * @param {selectedClass} [string] (optional) the selected class of the link. Defaults to "selected"
+     * @param {hideLabel} [boolean] (optional) if true, the label will have "sr-only" class. Defaults to false
+     * @example app.makeSelect($('.module-news module_nav'));
+     */
+    makeSelect: function($selector, labelText, selectId, selectedClass, hideLabel) {
+        var $navOptions = $('&lt;div />', {class: 'module_options'}).insertAfter($selector),
+            $options = '';
+
+        if (!selectedClass) {
+            selectedClass = 'selected';
+        }
+
+        $selector.addClass('js--hidden');
+        $('&lt;label />', {
+            class: hideLabel ? 'module_options-label sr-only' : 'module_options-label',
+            html: labelText ? labelText : 'Select year:',
+            for: selectId ? selectId : 'YearNav'
+        }).appendTo($navOptions);
+
+        $('&lt;select />', {
+            class: 'dropdown module_options-select',
+            id: selectId ? selectId : 'YearNav',
+            name: selectId ? selectId : 'YearNav'
+        }).appendTo($navOptions).on('change',function(){
+            location.href = $(this).val();
+        });
+
+        $selector.find('a').each(function(){
+            var $this = $(this),
+                selected = $this.hasClass(selectedClass) ? 'selected="selected"' : '';
+            $options += '&lt;option '+selected+' value="'+$this.attr('href')+'">'+$this.text()+'&lt;/option>';
+        });
+        $navOptions.find('select').append($options);
+    },
+
+    /**
+     * Disables first click for android devices and show dropdown instead of loading page.
+     * @param {selector} [selector]  the class being used by the navigation module
+     * @example app.androidTap('.nav--main');
+     */
+    androidTap: function(selector) {
+        if (q4App.isMobile.Android()) {
+            $(selector).on('touch touchstart', 'li.has-children > a, li.has-children.no-link > span', function(e) {
+                var $this = $(this),
+                    $parent = $this.parent();
+                if (!$parent.hasClass('sfHover')) {
+                    e.preventDefault();
+                    $parent.siblings().removeClass('sfHover');
+                    $parent.addClass('sfHover');
+                }
+            });
+        }
+    },
+
+    _onMobileMenuExpand: function($nav) {
+        $nav.on('touch touchstart', 'li.has-children:not(.home) > a, li.has-children.no-link:not(.home) > span', function(e) {
+            var $this = $(this),
+                $parent = $this.parent();
+            if (!$parent.hasClass('js--expanded')) {
+                e.preventDefault();
+                $parent.siblings().removeClass('js--expanded');
+                $parent.addClass('js--expanded');
+            }
+        });
+    },
+
+    /**
+     * Accessible Navigation powered by Superfish
+     * @param {$nav} [element]  the nav element (or ul element) you would like to apply superfish to
+     * @param {options} [object]  options to be passed into superfish
+     * @param {initAndroid} [boolean] (optional) if true, the androidTap function is initialized. Defaults to true
+     * @example app.superfish($('.nav--secondary .level2'), {cssArrows:false}, 1024)
+     */
+    superfish: function($nav, options, initAndroid) {
+        $nav.find('.no-link > span').attr('tabindex','0');
+        var initAndroidTap = initAndroid ? initAndroid : true;
+        if (!this.isMobile.any() &amp;&amp; this.options.superfish) {
+            $nav.superfish(options);
+        }
+        if (initAndroidTap) this.androidTap($nav);
+    },
+
+    /**
+     * Standard mobile menu functionality
+     * @param {$layout} [element]  the default layout element
+     * @param {pane} [selector]  the class of the pane element containing the mobile navigation
+     * @param {toggleClass} [selector]  the class assigned to the element used to toggle the mobile navigation
+     * @example app.mobileMenuToggle($('.layout'), '.pane--navigation', '.layout_toggle i')
+     */
+    mobileMenuToggle: function($layout, pane, toggle) {
+        var inst = this;
+        $layout.on('click', toggle, function(e) {
+            $layout.toggleClass('js--mobile');
+            inst._onMobileMenuExpand($('.js--mobile ' + pane + ' .nav'));
+        });
+    },
+
+    /**
+     * Gives a navigation element accessibility assistance in the form of the .focused class.
+     * @param {$nav} [element]  the navigation element used for this function
+     * @param {topLevel} [selector]  the class assigned to the highest visible level of the navigation
+     * @example app.accessibleNav($('.nav'), '.level1')
+     */
+    accessibleNav: function($nav, topLevel) {
+        $nav.find('.no-link > span').attr('tabindex','0');
+        $nav.on('focus', 'a, .no-link > span', function(e) {
+            var $link = $(this);
+            $link.closest('ul').find('li').removeClass('js--focused');
+            $link.closest('li').addClass('js--focused');
+
+            if ( $link.closest('li').is(':last-child') &amp;&amp; $link.closest('ul').is(topLevel) ) {
+                $link.blur(function() {
+                    $link.closest(topLevel).find('li').removeClass('js--focused');
+                });
+            }
+        });
+    },
+
+    /**
+     * Gives element accessibility properties suitable for accordions, slide toggles, and tab navigation.
+     * @param {$tablist} [element]  the wrapping element for the accessible section
+     * @param {$tab} [element]  the element used to toggle the appropriate $tabpanel
+     * @param {$tabpanel} [element]  the element intended to display in respect to the currently selected $tab
+     * @example app.accessibilize($tablist, $tab, $tabpanel)
+     */
+    accessibilize: function($tablist, $tab, $tabpanel) {
+        $tablist.attr('role','tablist');
+        $tab.attr('tabindex','0').attr('role','tab').attr('aria-expanded','false');
+        $tabpanel.attr('role','tabpanel').addClass('js--hidden');
+    },
+
+    /**
+     * Creates a fully accessible expanding and collapsing accordion with the ability to switch between toggle and accordion functionality.
+     * @param {$container} [element]  the wrapping element for the toggle list
+     * @param {item} [selector]  the class assigned to each designated toggling element
+     * @param {toggle} [selector]  the class assigned to the element that will toggle the containing item
+     * @param {panel} [selector]  the class assigned to the section that will be revealed if its containing item is toggled
+     * @param {accordion} [boolean]  (optional) if true, the toggling section will take on accordion functionality
+     * @param {allButton} [boolean]  (optional) if true, the toggling section will be accompanied by a "Hide All / Show All" button
+     * @param {openFirst} [boolean]  (optional) if true, the first item will be set to active with its panel revealed
+     * @example app.toggle($('.accordion'), '.accordion_item', '.accordion_toggle', '.accordion_panel', false, true);
+     */
+    toggle: function($container, item, toggle, panel, accordion, allButton, openFirst) {
+        var $this = this,
+            $item = $container.find(item);
+
+        $this.accessibilize($container, $container.find(toggle), $container.find(panel));
+        
+        $item.on('click keypress', toggle, function(e) {
+            e.preventDefault();
+            if (e.which == 13 || e.type == 'click') {
+                if (accordion) {
+                    $this._accordionTrigger($(this), $container, item, toggle, panel);
+                } else {
+                    $this._toggleTrigger($(this), $container, item, panel);
+                }
+
+                if (allButton) {
+                    if (!$container.find(item + '.js--active').length) {
+                        $container.find('.toggle-all').removeClass('js--active');
+                    }
+                    if ($container.find(item + '.js--active').length === $container.find(item).length) {
+                        $container.find('.toggle-all').addClass('js--active');
+                    }
+                }
+            }
+        });
+
+        if (allButton) {
+            $this._toggleAll($container, item, toggle, panel);
+        }
+
+        if (openFirst) {
+            $item.first().find(toggle).attr('aria-expanded', true);
+            $item.first().addClass('js--active').find(panel).removeClass('js--hidden');
+        }
+    },
+    _toggleAll: function($container, item, toggle, panel) {
+        $container.prepend('&lt;div class="toggle-all">&lt;a description="toggle all items" class="button" href="#all">&lt;span class="sr-only">toggle all&lt;/span>&lt;/a>&lt;/div>').on('click', '.toggle-all a', function(e) {
+            e.preventDefault();
+            $(this).parent().toggleClass('js--active');
+            if ( $(this).parent().is('.js--active') ) {
+                $(this).closest($container).find(toggle).attr('aria-expanded', 'true');
+                $(this).closest($container).find(item).addClass('js--active');
+                $(this).closest($container).find(panel).slideDown(400, function() {
+                    $(this).removeClass('js--hidden');
+                });
+            } else {
+                $(this).closest($container).find(toggle).attr('aria-expanded', 'false');
+                $(this).closest($container).find(item).removeClass('js--active');
+                $(this).closest($container).find(panel).slideUp(400, function() {
+                    $(this).addClass('js--hidden');
+                });
+            }
+        });
+    },
+    _accordionTrigger: function($this, $container, item, toggle, panel) {
+        if ( !$this.closest(item).hasClass('js--active') ) {
+            $(item).removeClass('js--active');
+            $container.find(toggle).attr('aria-expanded', false);
+            $container.find(panel).slideUp(400, function() {
+                $(this).addClass('js--hidden');
+            });
+
+            $this.attr('aria-expanded', true);
+            $this.closest(item).addClass('js--active').find(panel).slideDown(400, function() {
+                $(this).removeClass('js--hidden');
+            });
+        }
+    },
+    _toggleTrigger: function($this, $container, item, panel) {
+        var $allToggle = $this.closest($container).find('.toggle-all');
+
+        $this.attr('aria-expanded', function(i, attr) {
+            return attr == 'true' ? 'false' : 'true';
+        }).closest(item).toggleClass('js--active').find(panel).slideToggle(400, function() {
+            $(this).toggleClass('js--hidden');
+        });
+
+        if ( $this.closest($container).find(item).not('.js--active').length ) {
+            $allToggle.removeClass('js--active');
+        } else {
+            $allToggle.addClass('js--active');
+        }
+    },
+
+    /**
+     * Used to hide the "Remind Me" functionality for events modules if a reminder has already been created.
+     * Works for both list and details pages.
+     * @param {$el} [element]  element(s) containing the "Remind Me" form
+     * @example app.remindMeOnce($('.module-event .module_item')); or app.remindMeOnce($('.module-event-details'));
+     */
+    remindMeOnce: function($el) {
+        $el.each(function() {
+            if ( $(this).find('.module_reminder-success').text().length ) {
+                $(this).find('.module_reminder').addClass('js--reminded');
+            }
+        });
+    },
+
+    /**
+     * Our standard "Add to Calendar" functionality. Opens up a fancybox.
+     * @param {selector} [element]  Selector for the module containing "Add to Calendar" links
+     * @example app.addToCalendar('.module-event'); or app.addToCalendar('.module-event-latest, .module-event-upcoming');
+     */
+     addToCalendar: function(selector) {
+        $(selector).on('click keypress', '.module_add-to-calendar-reveal', function(e) {
+            if (e.keyCode == 13 || e.type == 'click') {
+                $.fancybox.open({
+                    src: $(this).next(),
+                    type: 'inline',
+                    opts: {
+                        slideClass: 'fancybox-slide--no-padding'
+                    }
+                });
+            }
+        });
+     },
+    /**
+     * Used to hide the "Add to Calendar" functionality for past events. Works for both list and details pages.
+     * @param {$events} [element]  element(s) containing the unwanted "Add to Calendar" link
+     * @example app.hidePastCal($('.module-event .module_item')); or app.hidePastCal($('.module-event-details'));
+     */
+    hidePastCal: function($events) {
+        var today = new Date();
+
+        $events.each(function() {
+            var $this = $(this),
+                $date = $this.find('.module_date-text');
+            if ( $date.text().indexOf("from") >= 0 ) {
+                var isolateDate = $date.text().split('from ').pop().split('to ');
+                if (today > new Date(isolateDate[1])) {
+                    $this.find('.module_add-to-calendar').addClass('js--hidden');
+                }
+            } else if (today > new Date($date.text())) {
+                $this.find('.module_add-to-calendar').addClass('js--hidden');
+            }
+        });
+    },
+    /**
+     * Opens the Mailing List Signup - Captcha inside a fancybox
+     * @param {$el} [element] The mailing list module
+     * @example app.fancySignup( '.module-subscribe' );
+     */
+    fancySignup: function() {
+        var inst = this,
+            validationLock = true,
+            signup = inst.options.mailingListSignupCls,
+            $signup = $(signup),
+            confirm = 'div[id*="SubscriberConfirmation"]',
+            $confirm = $('div[id*="SubscriberConfirmation"]'), // jshint ignore:line
+            footerSuccess = inst.options.mailingListConfig.location + ' ' + confirm + ' .module_message--success',
+            $footerSuccess = $(footerSuccess); 
+
+        // Subscriber Confirmation fix
+        if ( $confirm.is(':visible') ) {
+            if ( $confirm.filter(':visible').closest(inst.options.mailingListConfig.location).length ) {
+                var successText = $confirm.filter(':visible').closest(inst.options.mailingListConfig.location).find('.module_message--success').text();
+                $confirm.filter(':visible').parent().html( inst.options.mailingListConfig.tpl ).find('.module_message--success').html(successText);
+            }
+            inst.scrollTo( $('div[id*="SubscriberConfirmation"]').filter(':visible'), 0 );
+            if(!$footerSuccess.length) {
+                $('.module-unsubscribe,'+inst.options.mailingListConfig.hideOnConfirmation).addClass('js--hidden');
+            }
+        }
+        
+        if ( !$signup.length ) {
+            return;
+        }
+        
+        $signup.each(function(){
+            var $this = $(this);
+
+            // If a confirmation or error message is visible on page load, scroll to the module
+            if ( $this.find('input.module_input').length &amp;&amp; $this.find('input.module_input').val().length ){
+                inst.scrollTo( $this, 0 );
+            }
+
+            $this.find('.CaptchaContainer').addClass('js--hidden');
+
+            // Accessibility fixes
+            $this.find('.CaptchaContainer img').attr('alt', 'Captcha');
+            $this.find('.CaptchaContainer input[type="text"]').attr('aria-label', 'Captcha Text');
+            $this.find('table').removeAttr('cellpadding cellspacing border width');
+
+            // Create a second submit button to be displayed inside fancybox
+            $this.find('input[type="submit"]').removeAttr('onclick').appendTo( $this.find('.CaptchaContainer') );
+            $this.find('.module_actions').append('&lt;input type="submit" value="' + inst.options.mailingListConfig.submitText + '" class="button module-subscribe_submit-button module-subscribe_submit-button--fancy">');
+
+            $this.on('click', '.module-subscribe_submit-button--fancy', function(e){
+                e.preventDefault();
+                validationLock = false;
+
+                var $parent = $(this).closest( signup ),
+                    errors = inst._mailingListValidation( $parent );
+
+                if ( !errors.length ) {
+                    $parent.find('.CaptchaContainer').removeClass('js--hidden').data( 'container', $parent.attr('id') );
+
+                    $.fancybox.open({
+                        src  : $parent.find('.CaptchaContainer'),
+                        type : 'inline',
+                        opts : {
+                            onComplete : function() {
+                                $('.fancybox-container').appendTo($('#litPageDiv form:first'));
+                            }
+                        }
+                    });
+                } else {
+                    inst.scrollTo( $this.find('.module_error-container'), 0 );
+                }
+
+                return false;
+            });
+
+            // Run validation on change
+            $this.find('input, select').on('change', function(){
+                if (!validationLock) {
+                    inst._mailingListValidation( $this );
+                }
+            });
+
+            // Submit form on enter
+            $this.find('.CaptchaContainer input[type="text"]').on('keydown', function(e){
+                if (e.keyCode == 13) {
+                    e.preventDefault();
+                    $(this).closest('.CaptchaContainer').find('input[type="submit"]').trigger('click');
+                    return false;
+                }
+            });
+
+            // Make sure the Captcha is filled out
+            $this.find('.CaptchaContainer')
+                .prepend('&lt;div class="module_error-container">&lt;/div>')
+                .find('input[type="submit"]').on('click', function(e){
+                    var $container = $(this).closest('.CaptchaContainer');
+
+                    if ( !$container.find('input[type="text"]').val().length ) {
+                        e.preventDefault();
+                        $container.find('.module_error-container').html(inst.options.captchaValidationText + ' ' + inst.options.requiredText);
+                    } else if ($container.find('input[type="text"]').val().length !== 6 ) {
+                        e.preventDefault();
+                        $container.find('.module_error-container').html(inst.options.captchaValidationText + ' ' + inst.options.invalidText);
+                    }
+                });
+
+            // Validate submit on enter
+            $this.find('input[type="text"]').on('keydown', function(e){
+                if (e.keyCode == 13) {
+                    e.preventDefault();
+                    $(this).closest(signup).find('.module_actions input[type="submit"]').trigger('click');
+                    return false;
+                }
+            });
+        });
+    },
+    /**
+     * Validates all required fields.
+     * Used by default with fancySignup before displaying captcha.
+     * Returns an array of errors
+     * @param {$el} [element] The mailing list module
+     */
+    _mailingListValidation: function( $el ) {
+        var inst = this,
+            errors = [];
+
+        $el.find('.js--invalid').removeClass('js--invalid');
+
+        $el.find('.module_required').each(function(){
+            var $item = $(this).closest('.module-subscribe_table-input'),
+                message = inst.options.requiredText,
+                field = $item.find('label:first').text(),
+                validation = true;
+
+            // Does the input exist?
+            if ( $item.find('input').length ) {
+                if ( $item.hasClass('module-subscribe_email') ) {
+                    // Does the email address contain text?
+                    if ( !$item.find('input').val().length ) {
+                        validation = false;
+                    } 
+                    // Is the email address valid?
+                    else if ( !inst.isValidEmailAddress ( $item.find('input').val() ) ) {
+                        validation = false;
+                        message = inst.options.invalidText;
+                    }
+                } 
+                // Does the input contain text?
+                else if ( !$item.find('input').val().length ) {
+                    validation = false;
+                }
+            } else if ( $item.find('select').length ) {
+                if ( !$item.find('select option:selected').index() ) {
+                    validation = false;
+                }
+            } else {
+                if ( !$item.closest('table').find('input[type="checkbox"]:checked').length ) {
+                    $item = $item.next();
+                    validation = false;
+                }
+            }
+
+            if (!validation) {
+                $item.addClass('js--invalid');
+                errors.push({
+                    name: field,
+                    message: message
+                });
+            }
+        });
+
+        if (errors.length) {
+            $el.find('.module_error-container').html( Mustache.render( inst.options.errorTpl, {
+                errors: errors,
+                errorMessage: inst.options.errorMessage
+            })).show();
+        } else {
+            $el.find('.module_error-container').html('');
+
+        }
+
+        return errors;
+    },
+
+    /**
+     * Used to automatically set the copyright year to the current year.
+     * @param {$el} [element]  an element that will have its html replaced by the year
+     * @example app.copyright($('.copyright_year'));
+     */
+    copyright: function($el) {
+        $el.html( new Date().getFullYear() );
+    },
+
+    /**
+     * Small plugin used for document tracking w/ Google Analytics
+     * @example app.docTracking();
+     */
+    docTracking: function() {
+        var fileTypes,
+            domainRegex,
+            cdnRegex,
+            httpRegex,
+            baseHref,
+            baseTag,
+            currentPageMatches,
+            currentDomain;
+
+        // Fix for IE8
+        window.hasOwnProperty = window.hasOwnProperty || Object.prototype.hasOwnProperty; // jshint ignore:line
+
+        baseHref = '';
+        fileTypes = /\.(zip|exe|dmg|pdf|doc.*|xls.*|ppt.*|mp3|mp4|txt|rar|html|wma|mov|avi|wmv|flv|wav)(\?.*)?$/i;
+        domainRegex = /^https?:\/\/([^\/:?#]+)(?:[\/:?#]|$)/i;
+        httpRegex = /^https?\:\/\//i;
+        cdnRegex = /.*\.cloudfront\.net$/i;
+        currentPageMatches = window.location.href.match(domainRegex);
+        currentDomain = currentPageMatches.length > 0 ? currentPageMatches[1] : false;
+        baseTag = $('base');
+
+        if (baseTag.length > 0 &amp;&amp; baseTag.attr('href') !== undefined) {
+            baseHref = baseTag.attr('href');
+        }
+
+        $('body').on('click', 'a', function(event) {
+            var el,
+                elEv,
+                href,
+                domainMatches,
+                linkDomain,
+                isSiteDomain,
+                extensionMatch;
+
+            el = $(this);
+            href = el.attr('href') || '';
+
+            // Don't do anything with javascript links
+            if (href.match(/^javascript:/i)) {
+                return;
+            }
+
+            // Extract domain from link
+            domainMatches = href.match(domainRegex);
+
+            // Set link domain to the current if nothing matched (e.g. relative URL, tel/mailto)
+            linkDomain = null !== domainMatches ? domainMatches[1] : currentDomain;
+
+            // Does the domain match, or is this a CDN
+            isSiteDomain = linkDomain === currentDomain || cdnRegex.test(linkDomain) || linkDomain.toLowerCase().indexOf('q4cdn') > -1;
+
+            // Event defaults
+            elEv = {
+                value: 0,
+                non_i: false,
+                action: 'click',
+                loc: href
+            };
+
+            if (href.match(/^mailto\:/i)) {
+                // Email links
+                elEv.category = 'email';
+                elEv.label = href.replace(/^mailto\:/i, '');
+            } else if (href.match() &amp;&amp; !isSiteDomain) {
+                // External downloads always have http[s]
+                elEv.category = 'external';
+                elEv.label = href.replace(httpRegex, '');
+                elEv.non_i = true;
+            } else if (null !== (extensionMatch = href.match(fileTypes))) {
+                // Matches a filetype we care about (extensionMatch[1] is the type)                
+                elEv.category = 'download';
+                elEv.action = 'download';
+                elEv.label = href.replace(/ /g,'-').replace(httpRegex, '');
+                // Only add the base ref if its not a CDN link, or if the link is relative
+                elEv.loc = (cdnRegex.test(linkDomain) ? '' : baseHref) + href;
+            } else if (href.match(/^tel\:/i)) {
+                // iOS tel:// links
+                elEv.category = 'telephone';
+                elEv.action = 'click';
+                elEv.label = href.replace(/^tel\:/i, '');
+            } else {
+                return;
+            }
+
+            window.ga('send','event', elEv.category, elEv.action, elEv.label.toLowerCase(), elEv.value,{'nonInteraction': elEv.non_i});
+            window.ga('Client.send','event', elEv.category, elEv.action, elEv.label.toLowerCase(), elEv.value,{'nonInteraction': elEv.non_i});
+        });
+    }
+};</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri May 24 2019 18:27:56 GMT+0300 (Eastern European Summer Time) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

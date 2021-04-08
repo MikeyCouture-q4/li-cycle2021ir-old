@@ -1,0 +1,199 @@
+.module-form {
+    &--meeting {
+        padding: 0 20px !important;
+        .module_container--outer {
+            padding: 0 !important;
+        }
+        &_header {
+            padding: 20px !important;
+            .module_container--outer {
+                padding: 0 !important;
+            }
+            @media screen and (min-width: 769px) {
+                padding: 20px !important;
+                .grid {
+                    direction: rtl;
+                    .grid_col {
+                        direction: ltr;
+                    }
+                }
+            }
+            &-intro {
+                font-size: 1.3rem;
+                @include layout-medium {
+                    text-align: center;
+                }
+                h3, .h3 {
+                    margin: 0 0 10px 0;
+                    color: inherit;
+                    font-size: 2.6rem;
+                }
+                p {
+                    margin: 0;
+                }
+            }
+            &-logo {
+                @include layout-medium {
+                    text-align: center;
+                    margin-bottom: 10px;
+                }
+                span {
+                    font-size: 1.1rem;
+                    display: block;
+                }
+                img {
+                    margin: 5px;
+                }
+            }
+        }
+        &_footer {
+            background-color: $brand-color;
+            color: $light-color;
+            font-size: 1.3rem;
+            img {
+                margin-right: 20px;
+                vertical-align: bottom;
+            }
+        }
+        .module_introduction {
+            font-size: 1.3rem;
+            margin: 0;
+        }
+        .module-form_item {
+            label,
+            legend {
+                line-height: 15px;
+                vertical-align: top;
+            }
+            &--namehidden {
+                .module_input {
+                    margin-top: 20px;
+                }
+                label {
+                    position: absolute !important;
+                    width: 1px !important;
+                    height: 1px !important;
+                    padding: 0 !important;
+                    margin: -1px !important;
+                    overflow: hidden !important;
+                    clip: rect(0, 0, 0, 0) !important;
+                    border: 0 !important;
+                }
+            }
+            &--additional-information-optional {
+                @media only screen and (min-width: 769px) {
+                    width: 75%;
+                }
+            }
+            &--date-request-optional {
+                position: relative;
+                @media only screen and (min-width: 769px) {
+                    width: 25%;
+                }
+                &:before {
+                    @include icon("e921");
+                    position: absolute;
+                    right: 20px;
+                    bottom: calc(50% - 19px);
+                    color: $body-color;
+                }
+            }
+            &--current-shareholder {
+                display: block;
+                legend {
+                    margin-bottom: 0;
+                    @include layout-small {
+                        display: block;
+                        float: none;
+                    }
+                }
+                ul {
+                    display: inline-block;
+                    padding-left: 20px;
+                    @include layout-small {
+                        display: block;
+                        padding-left: 0;
+                        padding-top: 10px;
+                    }
+                    li {
+                        padding-left: 20px;
+                        display: inline-block;
+                        vertical-align: top;
+                        @include layout-small {
+                            padding-left: 0;
+                            padding-right: 20px;
+                        }
+                    }
+                }
+            }
+            &--consent-checkbox {
+                width: 100%;
+                label {
+                    padding-left: 30px;
+                    position: relative;
+                    &:before,
+                    &:after {
+                        position: absolute;
+                        left: 0;
+                        top: 50% !important;
+                        transform: translateY(-50%);
+                    }
+                    &:after {
+                        left: 3px;
+                    }
+                }
+            }
+        }
+        .module-form_itemCaptcha {
+            position: relative;
+            padding-left: 25px;
+            input[type="text"] {
+                color: $body-color;
+            }
+        }
+        .module_dropdown {
+            color: $body-color;
+        }
+        .module_input {
+            color: $body-color;
+        }
+        .module_required {
+            display: none;
+        }
+        .module_actions {
+            margin: 0 -20px;
+            padding: 20px;
+            background-color: $grey-dark-color;
+            text-align: right;
+            .module_link {
+                color: $light-color;
+                margin: 0 15px 0 0;
+                text-decoration: none;
+                text-transform: none;
+                font-size: 1.4rem;
+            }
+            [type="submit"][disabled] {
+                opacity: 0.5;
+                pointer-events: none;
+            }
+        }
+        &_confirmation {
+            font-size: 1.8rem;
+            text-align: center;
+            max-width: 520px;
+            margin: auto;
+            .module_container--inner:before {
+                @include icon("e920");
+                font-size: 4.6rem;
+                color: $dark-color;
+                display: block;
+                margin: auto;
+            }
+        }
+        @include layout-medium {
+            .module-form_item--namehidden .module_input {
+                margin-top: 0;
+            }
+        }
+    }
+}

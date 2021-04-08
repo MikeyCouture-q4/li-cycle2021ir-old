@@ -1,0 +1,127 @@
+/*==================================
+ ---------    SELECTBOX   ----------
+==================================*/
+
+.sbHolder {
+  border: solid 1px #000;
+  font-size: 15px;
+  font-size: 1em;
+  font-weight: normal;
+  height: 30px;
+  position: relative;
+  width: 200px;
+
+  &.sbHolderDisabled {
+    pointer-events: none;
+    border: 1px solid #979797;
+
+    a, a.sbSelector {
+      color: #979797;
+    }
+  }
+}
+
+.sbSelector {
+  display: block;
+  height: 30px;
+  left: 0;
+  line-height: 30px;
+  outline: none;
+  overflow: hidden;
+  position: absolute;
+  text-indent: 10px;
+  top: 0;
+  width: 170px;
+
+  &:link, &:visited, &:hover {
+    outline: none;
+    text-decoration: none !important;
+  }
+}
+
+.sbToggle {
+  float: right;
+  margin: 5px;
+  text-decoration: none !important;
+
+  &:before {
+    font-family: "q4-icons";
+    display: inline-block;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: unicode(edc2);
+    @include transition(0.3s ease-in-out);
+  }
+
+  &.sbToggleOpen {
+    &:before {
+      transform: rotate(-180deg);
+    }
+  }
+}
+
+.sbOptions {
+  background-color: #fff;
+  list-style: none;
+  left: -1px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 30px;
+  width: 200px;
+  z-index: 1;
+  overflow-y: auto;
+  box-shadow: 0 5px 5px 0 rgba(68, 68, 68, 0.3);
+
+  li {
+    padding: 0 15px;
+
+    &.last a {
+      border-bottom: none;
+    }
+  }
+
+  a {
+    border-bottom: solid 1px #F1F1F1;
+    display: block;
+    outline: none;
+    padding: 15px 0;
+
+    &:link, &:visited {
+      color: #545B62;
+      text-decoration: none;
+    }
+
+    &:hover,
+    &:focus,
+    &.sbFocus {
+      color: #105CA3;
+    }
+  }
+
+  .sbDisabled {
+    border-bottom: dotted 1px #515151;
+    color: #999;
+    display: block;
+    padding: 7px 0 7px 3px;
+  }
+
+  .sbGroup {
+    border-bottom: dotted 1px #515151;
+    color: #EBB52D;
+    display: block;
+    font-weight: bold;
+    padding: 7px 0 7px 3px;
+  }
+
+  .sbSub {
+    padding-left: 17px;
+
+  }
+}

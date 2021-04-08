@@ -1,0 +1,541 @@
+/*==================================
+ ----------- TOAST GRID -----------
+==================================*/
+
+// Namespaces
+// This stops me from being overzealous with enforcing classes
+$toast-grid-namespace: "grid" !default;
+$toast-grid-column-namespace: "grid_col" !default;
+
+// $col-groups are the column groups you want
+// For example, $col-groups: (3, 4, 5) will output:
+// .grid_col-n-of-3, .grid_col-n-of-4, [...]
+$toast-col-groups: (1, 2, 3, 4, 5, 6, 7, 8, 12) !default;
+
+// Gutter width
+$toast-gutter-width: 20px !default;
+
+// Breakpoints
+$layout-large: 1200px !default;
+$layout-legacy: 1024px !default;
+$layout-medium: 768px !default;
+$layout-small: 480px !default;
+
+// Pushes and pulls
+$toast-pushes: true !default;
+$toast-pulls: true !default;
+
+.#{$toast-grid-namespace} {
+    list-style: none;
+    margin-left: -$toast-gutter-width;
+    &--flex {
+        margin-left: -$toast-gutter-width;
+        box-sizing: border-box;
+        display: flex;
+        flex: 0 1 auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        &_column {
+            flex-direction: column;
+        }
+        &_row-reverse {
+            flex-direction: row-reverse;
+        }
+        &_column-reverse {
+            flex-direction: column-reverse;
+        }
+        &_justify-start {
+            justify-content: flex-start;
+            text-align: start;
+        }
+        &_justify-center {
+            justify-content: center;
+            text-align: center;
+        }
+        &_justify-end {
+            justify-content: flex-end;
+            text-align: end;
+        }
+        &_align-top {
+            align-items: flex-start;
+        }
+        &_align-middle {
+            align-items: center;
+        }
+        &_align-bottom {
+            align-items: flex-end;
+        }
+        &_space-around {
+            justify-content: space-around;
+        }
+        &_space-between {
+            justify-content: space-between;
+        }
+    }
+}
+
+.#{$toast-grid-namespace}--flex .#{$toast-grid-column-namespace} {
+    display: block;
+    margin-right: 0;
+    flex: 0 0 auto;
+}
+
+%span-all       { width: percentage(1/1); }
+%one-half       { width: percentage(1/2); }
+%one-third      { width: percentage(1/3); }
+%two-thirds     { width: percentage(2/3); }
+%one-quarter    { width: percentage(1/4); }
+%two-quarters   { width: percentage(2/4); }
+%three-quarters { width: percentage(3/4); }
+
+%flex-span-all       { width: auto; flex-basis: percentage(1/1); max-width: percentage(1/1); }
+%flex-one-half       { width: auto; flex-basis: percentage(1/2); max-width: percentage(1/2); }
+%flex-one-third      { width: auto; flex-basis: percentage(1/3); max-width: percentage(1/3); }
+%flex-two-thirds     { width: auto; flex-basis: percentage(2/3); max-width: percentage(2/3); }
+%flex-one-quarter    { width: auto; flex-basis: percentage(1/4); max-width: percentage(1/4); }
+%flex-two-quarters   { width: auto; flex-basis: percentage(2/4); max-width: percentage(2/4); }
+%flex-three-quarters { width: auto; flex-basis: percentage(3/4); max-width: percentage(3/4); }
+
+%push-span-all       { margin-left: percentage(1/1); }
+%push-one-half       { margin-left: percentage(1/2); }
+%push-one-third      { margin-left: percentage(1/3); }
+%push-two-thirds     { margin-left: percentage(2/3); }
+%push-one-quarter    { margin-left: percentage(1/4); }
+%push-two-quarters   { margin-left: percentage(2/4); }
+%push-three-quarters { margin-left: percentage(3/4); }
+
+%pull-span-all       { margin-left: -(percentage(1/1)); }
+%pull-one-half       { margin-left: -(percentage(1/2)); }
+%pull-one-third      { margin-left: -(percentage(1/3)); }
+%pull-two-thirds     { margin-left: -(percentage(2/3)); }
+%pull-one-quarter    { margin-left: -(percentage(1/4)); }
+%pull-two-quarters   { margin-left: -(percentage(2/4)); }
+%pull-three-quarters { margin-left: -(percentage(3/4)); }
+
+// For each of our column groups...
+@each $group in $toast-col-groups {
+
+    // For each column width from 1 to the column group...
+    @for $i from 1 through $group {
+        .#{$toast-grid-column-namespace}--#{$i}-of-#{$group} {
+            @if percentage($i/$group) == percentage(1/1) {
+                @extend %span-all;
+            } @else if percentage($i/$group) == percentage(1/2) {
+                @extend %one-half;
+            } @else if percentage($i/$group) == percentage(1/3) {
+                @extend %one-third;
+            } @else if percentage($i/$group) == percentage(2/3) {
+                @extend %two-thirds;
+            } @else if percentage($i/$group) == percentage(1/4) {
+                @extend %one-quarter;
+            } @else if percentage($i/$group) == percentage(2/4) {
+                @extend %two-quarters;
+            } @else if percentage($i/$group) == percentage(3/4) {
+                @extend %three-quarters;
+            } @else {
+                width: percentage($i/$group);
+            }
+        }
+        .#{$toast-grid-namespace}--flex .#{$toast-grid-column-namespace}--#{$i}-of-#{$group} {
+            @if percentage($i/$group) == percentage(1/1) {
+                @extend %flex-span-all;
+            } @else if percentage($i/$group) == percentage(1/2) {
+                @extend %flex-one-half;
+            } @else if percentage($i/$group) == percentage(1/3) {
+                @extend %flex-one-third;
+            } @else if percentage($i/$group) == percentage(2/3) {
+                @extend %flex-two-thirds;
+            } @else if percentage($i/$group) == percentage(1/4) {
+                @extend %flex-one-quarter;
+            } @else if percentage($i/$group) == percentage(2/4) {
+                @extend %flex-two-quarters;
+            } @else if percentage($i/$group) == percentage(3/4) {
+                @extend %flex-three-quarters;
+            } @else {
+                width: auto;
+                flex-basis: percentage($i/$group);
+                max-width: percentage($i/$group);
+            }
+        }
+        @if ($toast-pushes) {
+            .#{$toast-grid-column-namespace}--push-#{$i}-of-#{$group} {
+                @if percentage($i/$group) == percentage(1/1) {
+                    @extend %push-span-all;
+                } @else if percentage($i/$group) == percentage(1/2) {
+                    @extend %push-one-half;
+                } @else if percentage($i/$group) == percentage(1/3) {
+                    @extend %push-one-third;
+                } @else if percentage($i/$group) == percentage(2/3) {
+                    @extend %push-two-thirds;
+                } @else if percentage($i/$group) == percentage(1/4) {
+                    @extend %push-one-quarter;
+                } @else if percentage($i/$group) == percentage(2/4) {
+                    @extend %push-two-quarters;
+                } @else if percentage($i/$group) == percentage(3/4) {
+                    @extend %push-three-quarters;
+                } @else {
+                    margin-left: percentage($i/$group);
+                }
+            }
+        } // end pushes
+        @if ($toast-pulls) {
+            .#{$toast-grid-column-namespace}--pull-#{$i}-of-#{$group} {
+
+                @if percentage($i/$group) == percentage(1/1) {
+                    @extend %pull-span-all;
+                } @else if percentage($i/$group) == percentage(1/2) {
+                    @extend %pull-one-half;
+                } @else if percentage($i/$group) == percentage(1/3) {
+                    @extend %pull-one-third;
+                } @else if percentage($i/$group) == percentage(2/3) {
+                    @extend %pull-two-thirds;
+                } @else if percentage($i/$group) == percentage(1/4) {
+                    @extend %pull-one-quarter;
+                } @else if percentage($i/$group) == percentage(2/4) {
+                    @extend %pull-two-quarters;
+                } @else if percentage($i/$group) == percentage(3/4) {
+                    @extend %pull-three-quarters;
+                } @else {
+                    margin-left: -(percentage($i/$group));
+                }
+            }
+        } // end pulls
+    } // end @for
+
+} // end @each
+
+// All direct descendants of .grid get treated the same way.
+// This might be overkill for some, but it's a time-saver for me.
+
+// But what if don't want to add an extra column class?
+// [class*="#{$toast-grid-column-namespace}-"] {
+.#{$toast-grid-column-namespace} {
+    box-sizing: border-box;
+    display: inline-block;
+    margin-right: -.25em;
+    min-height: 1px;
+    padding-left: $toast-gutter-width;
+    vertical-align: top;
+    @media (max-width: $layout-small) {
+        display: block;
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+    }
+    @media (max-width: $layout-large) and (min-width: $layout-legacy + 1px) {
+        &[class*="#{$toast-grid-column-namespace}--lg-"] {
+            display: inline-block;
+            margin-right: -.24em;
+            @at-root .#{$toast-grid-namespace}--flex & {
+                display: block;
+                margin-right: 0;
+            }
+        }
+        &.#{$toast-grid-column-namespace}--lg-1-of-1 {
+            width: percentage(1/1);
+            @at-root .#{$toast-grid-namespace}--flex & {
+                width: auto;
+                flex-basis: percentage(1/1);
+                max-width: percentage(1/1);
+            }
+        }
+        &.#{$toast-grid-column-namespace}--lg-1-of-2 {
+            width: percentage(1/2);
+            @at-root .#{$toast-grid-namespace}--flex & {
+                width: auto;
+                flex-basis: percentage(1/2);
+                max-width: percentage(1/2);
+            }
+        }
+        &.#{$toast-grid-column-namespace}--lg-1-of-3 {
+            width: percentage(1/3);
+            @at-root .#{$toast-grid-namespace}--flex & {
+                width: auto;
+                flex-basis: percentage(1/3);
+                max-width: percentage(1/3);
+            }
+        }
+        &.#{$toast-grid-column-namespace}--lg-2-of-3 {
+            width: percentage(2/3);
+            @at-root .#{$toast-grid-namespace}--flex & {
+                width: auto;
+                flex-basis: percentage(2/3);
+                max-width: percentage(2/3);
+            }
+        }
+        &.#{$toast-grid-column-namespace}--lg-1-of-4 {
+            width: percentage(1/4);
+            @at-root .#{$toast-grid-namespace}--flex & {
+                width: auto;
+                flex-basis: percentage(1/4);
+                max-width: percentage(1/4);
+            }
+        }
+        &.#{$toast-grid-column-namespace}--lg-2-of-4 {
+            @extend .#{$toast-grid-column-namespace}--lg-1-of-2;
+        }
+        &.#{$toast-grid-column-namespace}--lg-3-of-4 {
+            width: percentage(3/4);
+            @at-root .#{$toast-grid-namespace}--flex & {
+                width: auto;
+                flex-basis: percentage(3/4);
+                max-width: percentage(3/4);
+            }
+        }
+    }
+    @media (max-width: $layout-legacy) and (min-width: $layout-medium + 1px ) {
+        &[class*="#{$toast-grid-column-namespace}--lc-"] {
+            display: inline-block;
+            margin-right: -.24em;
+            @at-root .#{$toast-grid-namespace}--flex & {
+                display: block;
+                margin-right: 0;
+            }
+        }
+        &.#{$toast-grid-column-namespace}--lc-1-of-1 {
+            width: percentage(1/1);
+            @at-root .#{$toast-grid-namespace}--flex & {
+                width: auto;
+                flex-basis: percentage(1/1);
+                max-width: percentage(1/1);
+            }
+        }
+        &.#{$toast-grid-column-namespace}--lc-1-of-2 {
+            width: percentage(1/2);
+            @at-root .#{$toast-grid-namespace}--flex & {
+                width: auto;
+                flex-basis: percentage(1/2);
+                max-width: percentage(1/2);
+            }
+        }
+        &.#{$toast-grid-column-namespace}--lc-1-of-3 {
+            width: percentage(1/3);
+            @at-root .#{$toast-grid-namespace}--flex & {
+                width: auto;
+                flex-basis: percentage(1/3);
+                max-width: percentage(1/3);
+            }
+        }
+        &.#{$toast-grid-column-namespace}--lc-2-of-3 {
+            width: percentage(2/3);
+            @at-root .#{$toast-grid-namespace}--flex & {
+                width: auto;
+                flex-basis: percentage(2/3);
+                max-width: percentage(2/3);
+            }
+        }
+        &.#{$toast-grid-column-namespace}--lc-1-of-4 {
+            width: percentage(1/4);
+            @at-root .#{$toast-grid-namespace}--flex & {
+                width: auto;
+                flex-basis: percentage(1/4);
+                max-width: percentage(1/4);
+            }
+        }
+        &.#{$toast-grid-column-namespace}--lc-2-of-4 {
+            @extend .#{$toast-grid-column-namespace}--lc-1-of-2;
+        }
+        &.#{$toast-grid-column-namespace}--lc-3-of-4 {
+            width: percentage(3/4);
+            @at-root .#{$toast-grid-namespace}--flex & {
+                width: auto;
+                flex-basis: percentage(3/4);
+                max-width: percentage(3/4);
+            }
+        }
+    }
+    @media (max-width: $layout-medium) and (min-width: $layout-small + 1px ) {
+        &[class*="#{$toast-grid-column-namespace}--md-"] {
+            display: inline-block;
+            margin-right: -.24em;
+            @at-root .#{$toast-grid-namespace}--flex & {
+                display: block;
+                margin-right: 0;
+            }
+        }
+        &.#{$toast-grid-column-namespace}--md-1-of-1 {
+            width: percentage(1/1);
+            @at-root .#{$toast-grid-namespace}--flex & {
+                width: auto;
+                flex-basis: percentage(1/1);
+                max-width: percentage(1/1);
+            }
+        }
+        &.#{$toast-grid-column-namespace}--md-1-of-2 {
+            width: percentage(1/2);
+            @at-root .#{$toast-grid-namespace}--flex & {
+                width: auto;
+                flex-basis: percentage(1/2);
+                max-width: percentage(1/2);
+            }
+        }
+        &.#{$toast-grid-column-namespace}--md-1-of-3 {
+            width: percentage(1/3);
+            @at-root .#{$toast-grid-namespace}--flex & {
+                width: auto;
+                flex-basis: percentage(1/3);
+                max-width: percentage(1/3);
+            }
+        }
+        &.#{$toast-grid-column-namespace}--md-2-of-3 {
+            width: percentage(2/3);
+            @at-root .#{$toast-grid-namespace}--flex & {
+                width: auto;
+                flex-basis: percentage(2/3);
+                max-width: percentage(2/3);
+            }
+        }
+        &.#{$toast-grid-column-namespace}--md-1-of-4 {
+            width: percentage(1/4);
+            @at-root .#{$toast-grid-namespace}--flex & {
+                width: auto;
+                flex-basis: percentage(1/4);
+                max-width: percentage(1/4);
+            }
+        }
+        &.#{$toast-grid-column-namespace}--md-2-of-4 {
+            @extend .#{$toast-grid-column-namespace}--md-1-of-2;
+        }
+
+        &.#{$toast-grid-column-namespace}--md-3-of-4 {
+            width: percentage(3/4);
+            @at-root .#{$toast-grid-namespace}--flex & {
+                width: auto;
+                flex-basis: percentage(3/4);
+                max-width: percentage(3/4);
+            }
+        }
+    }
+    @media (max-width: $layout-small) {
+        &[class*="#{$toast-grid-column-namespace}--sm-"] {
+            display: inline-block;
+            margin-right: -.24em;
+            @at-root .#{$toast-grid-namespace}--flex & {
+                display: block;
+                margin-right: 0;
+            }
+        }
+        &.#{$toast-grid-column-namespace}--sm-1-of-2 {
+            width: percentage(1/2);
+            @at-root .#{$toast-grid-namespace}--flex & {
+                width: auto;
+                flex-basis: percentage(1/2);
+                max-width: percentage(1/2);
+            }
+        }
+        &.#{$toast-grid-column-namespace}--sm-1-of-3 {
+            width: percentage(1/3);
+            @at-root .#{$toast-grid-namespace}--flex & {
+                width: auto;
+                flex-basis: percentage(1/3);
+                max-width: percentage(1/3);
+            }
+        }
+        &.#{$toast-grid-column-namespace}--sm-2-of-3 {
+            width: percentage(2/3);
+            @at-root .#{$toast-grid-namespace}--flex & {
+                width: auto;
+                flex-basis: percentage(2/3);
+                max-width: percentage(2/3);
+            }
+        }
+        &.#{$toast-grid-column-namespace}--sm-1-of-4 {
+            width: percentage(1/4);
+            @at-root .#{$toast-grid-namespace}--flex & {
+                width: auto;
+                flex-basis: percentage(1/4);
+                max-width: percentage(1/4);
+            }
+        }
+        &.#{$toast-grid-column-namespace}--sm-2-of-4 {
+            @extend .#{$toast-grid-column-namespace}--sm-1-of-2;
+        }
+        &.#{$toast-grid-column-namespace}--sm-3-of-4 {
+            width: percentage(3/4);
+            @at-root .#{$toast-grid-namespace}--flex & {
+                width: auto;
+                flex-basis: percentage(3/4);
+                max-width: percentage(3/4);
+            }
+        }
+        @at-root .#{$toast-grid-namespace}--flex .#{$toast-grid-column-namespace} {
+            width: auto;
+            flex-basis: 100%;
+            max-width: 100%;
+        }
+    }
+}
+
+// Centers the column in the grid and clears the row of all other columns
+.#{$toast-grid-column-namespace}--centered {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// Displays the column as the first in its row
+.#{$toast-grid-column-namespace}--d-first {
+    float: left;
+    @at-root .#{$toast-grid-namespace}--flex & {
+        float: none;
+        order: -1;
+    }
+}
+
+// Displays the column as the last in its row
+.#{$toast-grid-column-namespace}--d-last {
+    float: right;
+    @at-root .#{$toast-grid-namespace}--flex & {
+        float: none;
+        order: 1;
+    }
+}
+
+// Removes gutters from the columns
+.#{$toast-grid-namespace}--no-gutter {
+    margin-left: 0;
+
+    .#{$toast-grid-column-namespace} {
+        padding-left: 0;
+    }
+
+    .#{$toast-grid-column-namespace}--span-all {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+// Adds gutters from the columns
+.#{$toast-grid-namespace}--gutter {
+    margin-left: -$toast-gutter-width;
+
+    .#{$toast-grid-column-namespace} {
+        padding-left: $toast-gutter-width;
+    }
+
+    &-40 {
+        margin-left: -40px;
+
+        .#{$toast-grid-column-namespace} {
+            padding-left: 40px;
+        }
+    }
+}
+
+// Removes the negative margin from the columns
+.#{$toast-grid-namespace}--no-space {
+
+    .#{$toast-grid-column-namespace} {
+        margin-right: 0;
+    }
+}
+
+// Align column to the bottom.
+.#{$toast-grid-column-namespace}--ab {
+    vertical-align: bottom;
+}
+
+// Align column to the middle.
+.#{$toast-grid-column-namespace}--am {
+    vertical-align: middle;
+}

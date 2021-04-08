@@ -1,0 +1,53 @@
+/*==================================
+ --------- ACCESSIBILITY ----------
+==================================*/
+
+input:focus, select:focus, textarea:focus, button:focus,
+[href]:focus, [tabindex]:focus, [contentEditable=true]:focus,
+.module_add-to-calendar-reveal:focus, a:focus,
+input[type="checkbox"]:focus + label:before, input[type="radio"]:focus + label:before {
+    outline-width: 2px;
+    outline-style: dotted;
+    outline-color: inherit;
+}
+[disabled],
+[aria-disabled="true"],
+[tabindex="-1"] {
+    outline: none !important;
+}
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    border: 0 !important;
+}
+#maincontent:focus {
+    outline: 0px;
+}
+.tooltip {
+    position: absolute;
+    padding: 5px;
+    font-family: Arial;
+    color: black;
+    background: white;
+    line-height: normal;
+    transform: translate(0, -50%);
+    z-index: 200;
+    font-size: 12px;
+    white-space: nowrap;
+    margin-left: 5px;
+    &[data-position="left"] {
+        transform: translate(-100%, -50%);
+        margin-left: -5px;
+    }
+    &[aria-hidden="true"] {
+        display:none;
+    }
+    &[aria-hidden="false"] {
+        display:block;
+    }
+}

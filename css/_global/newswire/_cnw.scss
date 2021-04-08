@@ -1,0 +1,851 @@
+#cofile .company_info {
+    padding: 0;
+    border: 0;
+}
+
+#cofile .company_info img {
+    float: none;
+}
+
+#cofile .company_info a {
+    font-size: 11px;
+    font-weight: normal;
+}
+
+#cofile .company_info h5 {
+    font-weight: bold;
+}
+
+#cofile .company_info .company {
+    padding: 20px 20px 10px 20px;
+    border-bottom: 1px dotted #ccc;
+}
+
+#cofile .company_info .company.last {
+    border: 0;
+}
+
+#release_content>p {
+    padding: 0;
+    margin-bottom: 20px;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+#release_content h1 {
+    padding: 0;
+    font-size: 30px;
+}
+
+#release_overview .title_block {
+    background: url(http://www.newswire.ca/static/images/backgrounds/todays_events.gif) 160px bottom no-repeat;
+}
+
+#release_overview ul {
+    margin: 10px 0;
+    font-size: 13px;
+}
+
+#release_overview ul li {
+    padding: 7px 20px;
+    line-height: 15px;
+}
+
+#release_overview ul li.active {
+    background: #ff7b00;
+}
+
+#release_overview ul li.active a {
+    background: url(http://www.newswire.ca/static/images/backgrounds/tab_white_right.gif) 0 center no-repeat;
+    padding: 0 0 0 10px;
+    font-weight: bold;
+    color: #fff;
+}
+
+#release_overview ul li a {
+    display: block;
+    color: #323232;
+}
+
+#media_highlights {
+    width: 709px;
+    padding-right: 0;
+    margin: 20px 0;
+}
+
+#media_highlights .title_block {
+    float: left;
+    background: url(http://www.newswire.ca/static/images/icons/media_highlights.gif) right bottom no-repeat;
+    width: 130px;
+    height: 119px;
+    padding: 0;
+}
+
+#media_highlights .title_block h3 {
+    padding: 10px 0;
+    margin: 0;
+    font-size: 21px;
+}
+
+#media_highlights .title_block a {
+    color: #ff7b00;
+    font-weight: bold;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+#media_highlights .media_row {
+    margin-left: 158px;
+    margin-bottom: 0;
+    z-index: 99;
+    position: relative;
+}
+
+#media_highlights .media_row ul {
+    float: left;
+    _width: 10000px;
+}
+
+#media_highlights .media_row li {
+    width: 179px;
+    height: 119px;
+    border-right: solid #b2b2b2 1px;
+    padding: 0px;
+    margin: 0px;
+}
+
+#media_highlights .media_row li img {
+    display: block;
+    margin: auto;
+    vertical-align: middle;
+}
+
+#media_highlights .media_row .load_more {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: url(http://www.newswire.ca/static/images/backgrounds/load_more.png) 0 0 repeat;
+    height: 119px;
+}
+
+#media_highlights .media_row .load_less {
+    position: absolute;
+    visibility: hidden;
+    left: 145;
+    background: url(http://www.newswire.ca/static/images/backgrounds/load_more.png) 0 0 repeat;
+    height: 119px;
+    zoom: 1;
+    z-index: 99;
+}
+
+#media_highlights .media_row .load_more a {
+    display: block;
+    background: url(http://www.newswire.ca/static/images/backgrounds/white_right_arrow_slim.gif) center 0 no-repeat;
+    padding: 25px 0 0 0;
+    margin: 25px 0 0 10px;
+    width: 50px;
+    text-align: center;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    color: #fff;
+}
+
+#media_highlights .media_row .load_less a {
+    display: block;
+    background: url(http://www.newswire.ca/static/images/backgrounds/white_left_arrow_slim.png) center 0 no-repeat;
+    padding: 25px 0 0 0;
+    margin: 25px 0 0 0px;
+    width: 50px;
+    text-align: center;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    color: #fff;
+}
+
+#tags {
+    background: #fcfcfc;
+    padding: 10px 20px;
+    border-top: 1px dotted #e8e8e8;
+    border-bottom: 1px dotted #e8e8e8;
+}
+
+#tags ul {
+    padding: 6px 0 6px 25px;
+    overflow: hidden;
+    zoom: 1;
+}
+
+#tags ul.technorati_tags {
+    background: url(http://www.newswire.ca/static/images/icons/technorati.gif) 0 center no-repeat;
+}
+
+#tags ul.delicious_tags {
+    background: url(http://www.newswire.ca/static/images/icons/delicious.gif) 0 center no-repeat;
+}
+
+#tags ul li {
+    float: left;
+    margin-right: 5px;
+    color: #b2b2b2;
+    font-weight: bold;
+}
+
+#tags ul li a {
+    font-weight: normal;
+    color: #323232;
+}
+
+#tags ul li a:hover {
+    text-decoration: underline;
+}
+
+#release_content #comment-block .title_block {
+    padding: 25px 20px;
+    text-align: right;
+    border-bottom: 1px solid #dedede;
+    overflow: hidden;
+    zoom: 1;
+}
+
+#release_content #comment-block .title_block h2 {
+    float: left;
+    font-size: 22px;
+    text-transform: uppercase;
+    color: #323232;
+}
+
+#release_content #comment-block #comments div.comment_pagination {
+    font-size: 14px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+#release_content #comment-block #comments div.comment_pagination a.pager_jump {
+    cursor: pointer;
+}
+
+#release_content #comment-block #comments {
+    border-top: 3px solid #f9f9f9;
+    padding: 0px 20px 25px 20px;
+    width: 100%;
+}
+
+#release_content #comment-block #comments .comment {
+    overflow: hidden;
+    padding-top: 30px;
+    border-top: 1px dotted #e8e8e8;
+    clear: both;
+    width: 100%;
+}
+
+#release_content #comment-block #comments .comment.first_comment {
+    border-top: none;
+}
+
+#release_content #comment-block #comments .awaiting-moderation {
+    background-color: #eee;
+}
+
+#release_content #comment-block #comments .hidden-comment {
+    display: none;
+}
+
+#release_content #comment-block #comments .comment:first-child {
+    border-top: 0px;
+}
+
+#release_content #comment-block #comments .comment .comment-info {
+    float: left;
+    width: 145px;
+    font-weight: 11px;
+    color: #b2b2b2;
+}
+
+#release_content #comment-block #comments .comment .comment-info p.twitter {
+    padding-left: 100px;
+}
+
+p.twitter a img {
+    margin-bottom: 2px;
+}
+
+p.twitter a {
+    color: #b2b2b2;
+}
+
+span.twitter_realname {
+    color: #000000;
+    font-size: 10px;
+    font-weight: normal;
+}
+
+span.twitter_realname:hover {
+    text-decoration: none !important;
+}
+
+#release_content #comment-block #comments .comment .comment-info p span {
+    display: block;
+    color: #ff7b00;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.twitter_user a {
+    color: #4099FF;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+a.twitter_realname {
+    color: #000000;
+    font-size: 11px;
+    font-weight: normal;
+}
+
+a.twitter_realname:hover {
+    text-decoration: none;
+}
+
+span.comment-timestamp {
+    float: right;
+    color: #b2b2b2;
+    font-style: italic;
+}
+
+span.comment-timestamp a {
+    color: #b2b2b2;
+}
+
+#release_content #comment-block #comments .comment .comment-contents {
+    color: #323232;
+    float: left;
+    width: 495px;
+    margin-left: 15px;
+}
+
+#release_content #comment-block #comments .comment .comment-contents p {
+    margin-bottom: 5px;
+}
+
+#release_content #comment-block #comments .comment .comment-contents li {
+    display: inline;
+    vertical-align: middle;
+    padding-right: 12px;
+}
+
+#release_content #comment-block #comments .comment .comment-contents li img {
+    vertical-align: top;
+}
+
+#release_content #comment-block #comments .comment .comment-contents li a {
+    color: #989898;
+}
+
+ul#comment_tabs li {
+    width: 200px;
+    font-size: 13px;
+    font-weight: bold;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    display: inline-block;
+    background-color: #b2b2b2;
+}
+
+ul#comment_tabs li.comment_tab_switch:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+ul#comment_tabs li.comment_tab_switch a {
+    color: #ffffff;
+}
+
+ul#comment_tabs li.comment_tab_active {
+    background-color: #ffffff;
+    border-right: 1px solid #cfcfcf;
+    border-left: 1px solid #cfcfcf;
+    border-top: 1px solid #cfcfcf;
+}
+
+ul#comment_tabs li.comment_tab_active a {
+    color: #000000;
+}
+
+#release_content #comment-block #add-comment {
+    background-color: #fff7cf;
+    border-top: 1px solid #dedede;
+}
+
+#release_content #comment-block #add-comment .title_block {
+    padding: 25px 20px;
+    text-align: right;
+}
+
+#release_content #comment-block #add-comment .title_block h2 {
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #323232;
+    float: left;
+}
+
+#release_content #comment-block #add-comment a {
+    color: #323232;
+    text-decoration: underline;
+    font-size: 11px;
+}
+
+#release_content #comment-block #add-comment label {
+    display: inline-block;
+    width: 165px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: left;
+    float: left;
+    zoom: 1;
+    clear: both;
+}
+
+#release_content #comment-block #add-comment input.field,
+#release_content #comment-block #add-comment textarea {
+    float: left;
+    width: 300px;
+    height: 30px;
+    border: 1px solid #b3b3b3;
+    border-right: 0px;
+    border-bottom: 0px;
+    margin-bottom: 10px;
+}
+
+#release_content #comment-block #add-comment textarea {
+    height: 130px;
+    width: 400px;
+}
+
+#release_content #comment-block #add-comment .captcha {
+    clear: left;
+    display: block;
+}
+
+#release_content #comment-block #add-comment .captcha img {
+    float: left;
+    margin-left: 165px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+}
+
+#release_content #comment-block #add-comment .captcha label {
+    clear: left;
+    float: left;
+    font-size: 16px;
+    padding-top: 5px;
+    height: 28px;
+    line-height: 20px;
+}
+
+#release_content #comment-block #add-comment .captcha input {
+    float: left;
+    width: 125px;
+    height: 30px;
+    border: 1px solid #b3b3b3;
+    border-right: 0px;
+    border-bottom: 0px;
+    margin-bottom: 10px;
+}
+
+#release_content #comment-block #add-comment .post-comment {
+    clear: both;
+    float: left;
+    margin-left: 165px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    background-color: #FCFCFC;
+    padding: 9px 20px 7px 20px;
+    border-top: 1px #DCDCDC solid;
+    border-left: 1px #D6D6D6 solid;
+    border-right: 1px #B9B9B9 solid;
+    border-bottom: 1px #ABABAB solid;
+    color: #383838;
+    font-size: 12px;
+    text-transform: uppercase;
+    /* for IE */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f0f0f0');
+    /* for webkit browsers */
+    background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#f0f0f0));
+    /* for firefox 3.6+ */
+    background: -moz-linear-gradient(top, #ffffff, #f0f0f0);
+}
+
+.release_highlights {
+    float: left;
+    width: 200px;
+    padding: 20px 0 0 0;
+    margin: 0 20px 15px 0;
+    font-size: 12px;
+    line-height: 18px;
+    border-top: 1px solid #d8d8d8;
+    border-bottom: 1px solid #d8d8d8;
+}
+
+.release_highlights h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.release_highlights ul {
+    padding-left: 20px;
+    list-style: square;
+}
+
+.release_highlights ul li {
+    margin-bottom: 15px;
+}
+
+.consolidated_highlights {
+    padding-top: 20px;
+    border-top: 1px dotted #d8d8d8;
+}
+
+.consolidated_highlights h4 {
+    margin-bottom: 15px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.consolidated_highlights table {
+    margin-bottom: 20px;
+}
+
+.consolidated_highlights table th {
+    background: #f7f7f7;
+    padding: 10px;
+    font-weight: bold;
+    text-align: right;
+    border-bottom: 1px solid #000;
+}
+
+.consolidated_highlights table td {
+    padding: 10px;
+    text-align: right;
+    border-right: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+#content_wrapper .consolidated_highlights .footnotes {
+    margin: 0;
+    line-height: 13px;
+    font-size: 11px;
+    color: #b2b2b2;
+}
+
+#table_blowup {
+    position: relative;
+    font-size: 1em;
+    background-color: #fff;
+    margin: 5% auto;
+    max-width: 1000px;
+    max-height: 80%;
+    overflow-y: auto;
+    overflow-x: auto;
+    padding: 20px;
+}
+
+#table_blowup table {
+    margin: auto;
+}
+
+#table_blowup td {
+    padding: 5px;
+}
+
+#PullQuote,
+#PullQuoteFrench {
+    width: 300px;
+    float: right;
+    margin: 30px;
+    font-style: italic;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 16px;
+    text-indent: -1.5em;
+    line-height: 20px;
+}
+
+#PullQuote:before,
+#PullQuoteFrench:before {
+    font-size: xx-large;
+    font-weight: bold;
+    color: #0000FF;
+}
+
+#PullQuote:after,
+#PullQuoteFrench:after {
+    font-size: xx-large;
+    font-weight: bold;
+    color: #0000FF;
+    float: right;
+    position: relative;
+    right: -1.5em;
+}
+
+#PullQuote:before {
+    content: "“ ";
+}
+
+#PullQuoteFrench:before {
+    content: "“ ";
+}
+
+#PullQuote:after {
+    content: " ”";
+}
+
+#PullQuoteFrench:after {
+    content: " ”";
+}
+
+.meta_info {
+    width: 60%;
+}
+
+.meta_info .release_date {
+    color: #323232;
+    font-weight: bold;
+}
+
+p.alt_release {
+    padding: 0;
+    color: #444444;
+    font-family: Verdana, Helvetica, sans-serif;
+}
+
+span.din {
+    font-size: 24px;
+}
+
+.alt_release {
+    display: inline-block;
+    text-align: center;
+    color: #ff7b00;
+    height: 27px;
+    width: 228px;
+    background-color: #FCFCFC;
+    padding: 10px 0 0 10px;
+    border-top: 1px #E6E6E6 solid;
+    border-left: 1px #E2E2E2 solid;
+    border-right: 1px #C6C6C6 solid;
+    border-bottom: 1px #B7B7B7 solid;
+    text-transform: uppercase;
+    font-size: 18px;
+    /* for IE */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f0f0f0');
+    /* for webkit browsers */
+    background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#f0f0f0));
+    /* for firefox 3.6+ */
+    background: -moz-linear-gradient(top, #ffffff, #f0f0f0);
+    margin-bottom: 40px;
+}
+
+a.alt_release:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#ReleaseContent {
+    font-size: 13px;
+}
+
+#ReleaseContent ul[type=circle]>li {
+    list-style-type: circle;
+}
+
+#ReleaseContent ul[type=square]>li {
+    list-style-type: square;
+}
+
+#ReleaseContent ol[type=a]>li {
+    list-style-type: lower-alpha;
+}
+
+#ReleaseContent ol[type=i]>li {
+    list-style-type: lower-roman;
+}
+
+#ReleaseContent table {
+    border-collapse: collapse;
+}
+
+tr.cnwUnderlinedCell td {
+    border-bottom: 1px solid #000000;
+}
+
+tr.cnwDoubleUnderlinedCell td {
+    border-bottom: 3px double #000000;
+}
+
+tr.cnwBoldUnderlinedCell td {
+    border-bottom: 3px solid #000000;
+}
+
+td.cnwUnderlinedCell {
+    border-bottom: 1px solid #000000;
+}
+
+td.cnwDoubleUnderlinedCell {
+    border-bottom: 3px double #000000;
+}
+
+td.cnwBoldUnderlinedCell {
+    border-bottom: 3px solid #000000;
+}
+
+.cnwBorderedTable td {
+    border-collapse: collapse;
+    border: 1px solid black;
+    padding: 2px;
+    font-size: 12px;
+}
+
+#ReleaseContent table td {
+    padding: 2px;
+}
+
+.cnwTableBorderStyle15 {
+    border: 1px solid #aaaaaa;
+}
+
+.cnwTableBorderStyle14 {
+    border-top: 1px solid #aaaaaa;
+    border-right: 1px solid #aaaaaa;
+    border-bottom: 1px solid #aaaaaa;
+    border-left: none;
+}
+
+.cnwTableBorderStyle13 {
+    border-top: 1px solid #aaaaaa;
+    border-right: 1px solid #aaaaaa;
+    border-bottom: none;
+    border-left: 1px solid #aaaaaa;
+}
+
+.cnwTableBorderStyle12 {
+    border-top: 1px solid #aaaaaa;
+    border-right: 1px solid #aaaaaa;
+    border-bottom: none;
+    border-left: none;
+}
+
+.cnwTableBorderStyle11 {
+    border-top: 1px solid #aaaaaa;
+    border-right: none;
+    border-bottom: 1px solid #aaaaaa;
+    border-left: 1px solid #aaaaaa;
+}
+
+.cnwTableBorderStyle10 {
+    border-top: 1px solid #aaaaaa;
+    border-right: none;
+    border-bottom: 1px solid #aaaaaa;
+    border-left: none;
+}
+
+.cnwTableBorderStyle9 {
+    border-top: 1px solid #aaaaaa;
+    border-right: none;
+    border-bottom: none;
+    border-left: 1px solid #aaaaaa;
+}
+
+.cnwTableBorderStyle8 {
+    border-top: 1px solid #aaaaaa;
+    border-right: none;
+    border-bottom: none;
+    border-left: none;
+}
+
+.cnwTableBorderStyle7 {
+    border-top: none;
+    border-right: 1px solid #aaaaaa;
+    border-bottom: 1px solid #aaaaaa;
+    border-left: 1px solid #aaaaaa;
+}
+
+.cnwTableBorderStyle6 {
+    border-top: none;
+    border-right: 1px solid #aaaaaa;
+    border-bottom: 1px solid #aaaaaa;
+    border-left: none;
+}
+
+.cnwTableBorderStyle5 {
+    border-top: none;
+    border-right: 1px solid #aaaaaa;
+    border-bottom: none;
+    border-left: 1px solid #aaaaaa;
+}
+
+.cnwTableBorderStyle4 {
+    border-top: none;
+    border-right: 1px solid #aaaaaa;
+    border-bottom: none;
+    border-left: none;
+}
+
+.cnwTableBorderStyle3 {
+    border-top: none;
+    border-right: none;
+    border-bottom: 1px solid #aaaaaa;
+    border-left: 1px solid #aaaaaa;
+}
+
+.cnwTableBorderStyle2 {
+    border-top: none;
+    border-right: none;
+    border-bottom: 1px solid #aaaaaa;
+    border-left: none;
+}
+
+.cnwTableBorderStyle1 {
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    border-left: 1px solid #aaaaaa;
+}
+
+.cnwTableBorderStyle16 {
+    border-collapse: collapse;
+}
+
+#ReleaseContent pre {
+    font-family: Courier;
+}
+
+
+/*PR Newswire CSS*/
+
+span.prnews_span {
+    font-size: 8pt;
+    font-family: "Arial";
+    color: black;
+}
+
+a.prnews_a {
+    color: blue;
+}
+
+li.prnews_li {
+    font-size: 8pt;
+    font-family: "Arial";
+    color: black;
+}
+
+p.prnews_p {
+    font-size: 0.62em;
+    font-family: "Arial";
+    color: black;
+    margin: 0in;
+}

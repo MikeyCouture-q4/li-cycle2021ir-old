@@ -1,0 +1,32 @@
+{
+  "name": "q4-blank_template",
+  "title": "Q4 Blank Template",
+  "homepage": "https://github.com/q4mobile/q4-blank_template",
+  "author": {
+    "name": "Q4 Inc",
+    "email": ""
+  },
+  "version": "1.1.8",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt qunit"
+  },
+  "devDependencies": {
+    "grunt": "^1.3.0",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-qunit": "^1.2.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^5.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-eslint": "^19.0.0",
+    "grunt-jsdoc": "^2.1.0",
+    "grunt-jsdoc-plugin": "^0.1.4",
+    "grunt-sassdoc": "^2.0.2",
+    "grunt-tape": "^0.1.0",
+    "minami": "^1.1.1"
+  }
+}

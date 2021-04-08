@@ -1,0 +1,114 @@
+/*==================================
+ ------------ RESET CSS -----------
+==================================*/
+
+html, body, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, blockquote, pre,
+abbr, acronym, address, big, cite, code,
+del, dfn, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, center,
+dl, dt, dd,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: $body-size;
+}
+
+nav,
+.list--reset {
+    ol,
+    ul:not(.list) {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+strong {
+    font-weight: 700;
+}
+
+em {
+    font-style: italic;
+}
+
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+}
+
+sub {
+    vertical-align: sub;
+}
+
+sup {
+    vertical-align: super;
+}
+
+small {
+    font-size: 70%;
+    line-height: normal;
+}
+
+select:empty {
+    display: none;
+}
+
+*::-webkit-input-placeholder {
+    color: inherit;
+    opacity: 1;
+}
+*::-moz-placeholder {
+    color: inherit;
+    opacity: 1;
+}
+*:-ms-input-placeholder {
+    color: inherit;
+    opacity: 1;
+}

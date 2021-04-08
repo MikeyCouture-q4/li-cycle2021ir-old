@@ -1,0 +1,151 @@
+/*==================================
+ --------- UTILITY CLASSES --------
+==================================*/
+
+.hidden {
+    &:not([role=tabpanel]) {
+        display: none !important;
+    }
+    &[role=tabpanel] {
+        display: none;
+    }
+}
+
+.disabled {
+    opacity: 0.1;
+    border-color: $body-color;
+    color: $body-color;
+    transition: none;
+    pointer-events: none;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.relative {
+    position: relative;
+}
+
+.inline {
+    display: inline;
+}
+
+.block {
+    display: block;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.vtop {
+    vertical-align: top;
+}
+
+.vmiddle {
+    vertical-align: middle;
+}
+
+.vbottom {
+    vertical-align: bottom;
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.lowercase {
+    text-transform: lowercase;
+}
+
+.background--cover {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.background--brand {
+    background-color: $brand-color;
+}
+
+.background--alt-brand {
+    background-color: $brand-color--alt;
+}
+
+.background--dark {
+    background-color: $dark-color;
+}
+
+.background--light {
+    background-color: $light-color;
+}
+
+.background--grey {
+    background-color: $grey-color;
+}
+
+.background--success {
+    background-color: $success-color;
+}
+
+.background--error {
+    background-color: $error-color;
+}
+
+.color--brand {
+    color: $brand-color;
+}
+
+.color--dark {
+    color: $dark-color;
+}
+
+.color--grey {
+    color: $grey-color;
+}
+
+.color--success {
+    color: $success-color;
+}
+
+.color--error {
+    color: $error-color;
+}
+
+.dark {
+    color: $light-color;
+    a {
+        color: $light-color;
+    }
+
+    .button {
+        &--cta {
+            color: $light-color;
+        }
+    }
+}

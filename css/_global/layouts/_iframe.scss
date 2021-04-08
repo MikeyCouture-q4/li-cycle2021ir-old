@@ -1,0 +1,18 @@
+/*==================================
+ ----------- LAYOUT CSS -----------
+==================================*/
+
+/*------- iframe layout CSS ------*/
+
+.layout--iframe {
+    .pane {
+        &--content {
+            .module {
+                padding: $module-vspace--thin 0;
+                &_container--outer {
+                    max-width: none;
+                }
+            }
+        }
+    }
+}

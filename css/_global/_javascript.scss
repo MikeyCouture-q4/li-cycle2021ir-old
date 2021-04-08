@@ -1,0 +1,40 @@
+/*---------- Javascript ----------*/
+
+.js {
+    &--loading {
+        &:after {
+            position: relative;
+            left: 50%;
+            display: inline-block;
+            margin: calculatePixels(1rem) 0 calculatePixels(1rem) -25px;
+            @include icon("eb27");
+            font-size: 5rem;
+            animation: spin 0.8s infinite linear;
+        }
+    }
+    &--hidden {
+        &:not([data-accordion]) {
+            display: none !important;
+        }
+        &[data-accordion] {
+            display: none;
+        }
+    }
+    &--visible {
+        display: block;
+    }
+    &--disabled {
+        opacity: 0.3;
+        transition: none;
+        pointer-events: none;
+    }
+    &--invalid {
+        input[type="text"],
+        select {
+            border: 1px solid $error-color !important;
+        }
+        input[type="checkbox"] {
+            border-color: $error-color !important;
+        }
+    }
+}
